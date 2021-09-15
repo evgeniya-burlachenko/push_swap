@@ -22,6 +22,7 @@ else if (a_arr[0].num < a_arr[1].num && a_arr[0].num < a_arr[2].num)//275
 	sa(a_arr, data, 1);//725
 	ra(a_arr, data, 1);//257
 }
-else if (a_arr[0].num < a_arr[1].num && a_arr[0].num > a_arr[2].num)//
-
+else if (a_arr[0].num < a_arr[1].num && a_arr[0].num > a_arr[2].num)//(572)5<7 5>2
+	rra(a_arr, data, 1);//257
+	
 }
