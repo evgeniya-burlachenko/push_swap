@@ -4,21 +4,21 @@ void error_utils(int argc, char **argv)
 {
 	int i;
 
-	if(argc == 1)
+	if(argc == 1)//если 1 число 
 		exit (1);
 	i = 1;
 
-	if(i < argc)
+	if(i < argc)//
 	{
-		if(!check_argv(argv[i]))
-			exit (1);
+		if(!check_argv(argv[i]))//проверяю что подали число
+			exit (1);//если нет -ошибка
 
 	}
 }
 
 int error_atoi(unsigned long r, int sign)
 {
-	if((r > 2147483647 && sign == 1) || (r > 2147483647 && sign == -1))
+	if((r > 2147483647 && sign == 1) || (r > 2147483648 && sign == -1))
 	{
 		ft_putstr_fd("Error\n", 1);
 		exit(1);

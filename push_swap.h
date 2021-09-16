@@ -49,6 +49,10 @@ void		pb(t_arr *a_arr, t_arr *b_arr, t_data *data);
 void		pa(t_arr *a_arr, t_arr *b_arr, t_data *data);
 
 void 		sort_three(t_arr *a_arr, t_data *data);
+void		count_steps(t_arr *a_arr, int len);
+void		push_swap(t_arr *a_arr, t_arr *b_arr, t_data *data);
+void		push_to_b(t_arr *a_arr, t_arr *b_arr, t_data *data);
+
 
 
 #endif

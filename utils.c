@@ -67,7 +67,7 @@ int bubble_sorted(t_arr *arr, int len)//стек a и длина его
 	}
 	if(arr[len - 1].num < arr[len - 2].num)// последнее меньше прелылущего
 		return(0);
-	return(bubble_sorted(arr, len -1));
+	return(bubble_sorted(arr, len - 1));//и так пока не закончится len
 
 }
 
