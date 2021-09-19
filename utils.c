@@ -4,7 +4,7 @@ t_arr	*newArray(int len)
 {
 	t_arr	*arr;
 
-	arr = malloc(len*sizeof(t_arr));
+	arr = malloc(len * sizeof(t_arr));
 	if(!arr)
 		return(0);
 	return(arr);
@@ -21,7 +21,7 @@ void checkArgcArgv(int argc, char **argv)
 	while(i < argc)
 	{
 		if(!checkArgv(argv[i]))
-			exit(1);
+			exit (1);
 		i++;
 	}
 }
@@ -55,21 +55,18 @@ int atoiPs(const char *str)
 
 	while(*str == ' ' || (*str >= 9 && *str <= 13))
 		str++;
-	if(*str == '-' || *str == '+')
-	{
-		if(*str == '-')
-			sign = -1;
+	if(*str == '-')
+		sign = -1;
+	if(*str == '+' || *str == '-')
 		str++;
-	}
 	while(ft_isdigit(*str))
 	{
-		
 		if (num > 2147483647 && (sign == 1))
 			return(-1);
 		if (num > 2147483648 && (sign == -1))
 			return(0);
-		str++;
 		num = num * 10 + *str - '0';
+		str++;
 	}
 	errorAtoi(num, sign);
 	return(sign * (int)num);

@@ -7,7 +7,8 @@ void mainInstruction(t_arr *a_arr, t_arr *b_arr, t_info *data, int len)
 	else if(data -> a_len == 3)
 		sortedThree(a_arr, data);
 	else
-		push_swap(a_arr, b_arr, data);
+		//push_swap(a_arr, b_arr, data);
+		ft_putstr_fd("push_swap\n", 1);
 	if (bubbleSorting(a_arr, len))
 	{
 		freeAll(a_arr, b_arr, data);

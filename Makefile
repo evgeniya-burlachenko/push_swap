@@ -6,11 +6,10 @@ HEADER	= push_swap.h
 SRCS	= utils.c\
 		  rotate.c\
 		  swap.c\
-		  inndexArray.c\
 		  rotateReverse.c\
 		  sortedThree.c\
-		  
-		  utilsError.c
+		  utilsError.c\
+		  indexArray.c
 
 SRCS_P	= mainPs.c
 

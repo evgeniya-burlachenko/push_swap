@@ -28,7 +28,7 @@ int indexMin(t_arr	*a, t_info *data, int flag, int i)
 	}
 	if (a[index].value == checkRepeat)
 		errorExit();
-	compare = a[index].value;
+	checkRepeat = a[index].value;
 	if (index == 0)
 		return(-1);
 	else if (index == -2)
