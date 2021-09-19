@@ -1,12 +1,39 @@
 #include "push_swap.h"
 
-int check_argv(char **argv)
+t_arr	*newArray(int len)
+{
+	t_arr	*arr;
+
+	arr = malloc(len*sizeof(t_arr));
+	if(!arr)
+		return(0);
+	return(arr);
+
+}
+
+void checkArgcArgv(int argc, char **argv)
 {
 	int i;
+
+	if(argc == 1)
+		exit (1);
+	i = 1;
+	while(i < argc)
+	{
+		if(!checkArgv(argv[i]))
+			exit(1);
+		i++;
+	}
+}
+
+int	checkArgv(char *argv)
+{
+	int		i;
+
 	i = 0;
 	if(argv[i] == '-' || argv[i] == '+')
 		i++;
-	while (argv[1])
+	while(argv[i])
 	{
 		if(!ft_isdigit(argv[i]))
 		{
@@ -16,64 +43,48 @@ int check_argv(char **argv)
 		i++;
 	}
 	return(1);
+}
+
+int atoiPs(const char *str)
+{
+	int				sign;
+	unsigned long 	num;
+
+	sign = 1;
+	num = 0;
+
+	while(*str == ' ' || (*str >= 9 && *str <= 13))
+		str++;
+	if(*str == '-' || *str == '+')
+	{
+		if(*str == '-')
+			sign = -1;
+		str++;
+	}
+	while(ft_isdigit(*str))
+	{
+		
+		if (num > 2147483647 && (sign == 1))
+			return(-1);
+		if (num > 2147483648 && (sign == -1))
+			return(0);
+		str++;
+		num = num * 10 + *str - '0';
+	}
+	errorAtoi(num, sign);
+	return(sign * (int)num);
 	
 }
 
-t_arr *new_array(int len)
+int bubbleSorting(t_arr *arr, int len)
 {
-	t_arr	*arr;
-
-	arr = malloc(len*sizeof(t_arr));
-	if(!arr)
-		return(NULL);
-	return(arr);
-
-}
-
-int atoi_push_swap(const char *str)
-{
-	int				sign;
-	unsigned long	r;
-
-	r = 0;
-	sign = 1;
-	while (*str == 32 || (*str >= 9 && *str <= 13))
-		str++;
-	if(*str == '-')
-	{
-		sign = -1;
-	}
-	if(*str == '+' || *str == '-')
-		str++;
-	while (*str >= '0' && *str <= '9')
-	{
-		if(r > LONG_MAX && (sign == 1))
-			return(-1);
-		if(r > LONG_MAX && (sign == -1))
-			return(0);
-		r = r * 10 + *str - '0';
-		str++;
-	}
-	error_atoi(r, sign);
-	return(sign *(int)r);
-
-}
-
-int bubble_sorted(t_arr *arr, int len)//стек a и длина его
-{
-	if(len == 1 || len == 0) // если 1 цифра или нет
-	{
+	if(len == 1 || len == 0)
 		return(1);
+	while ((len > 1))
+	{
+		if(arr[len - 2].value > arr[len - 1].value)
+			return(0);
+		len--;	
 	}
-	if(arr[len - 1].num < arr[len - 2].num)// последнее меньше прелылущего
-		return(0);
-	return(bubble_sorted(arr, len - 1));//и так пока не закончится len
-
-}
-
-void		all_free(t_arr *a_arr, t_arr *b_arr, t_data *data)
-{
-	free(a_arr);
-	free(b_arr);
-	free(data);
+	return(1);	
 }
