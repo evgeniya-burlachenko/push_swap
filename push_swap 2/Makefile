@@ -3,20 +3,19 @@ NAME_C	= checker
 
 HEADER	= push_swap.h
 
-SRCS	= utils.c\
-		  rotate.c\
-		  swap.c\
+SRCS	= choices.c\
 		  push.c\
-		  rotateReverse.c\
-		  sortedThree.c\
-		  utilsError.c\
-		  indexArray.c\
 		  push_swap.c\
-		  rotateStack.c\
-		  rotateStacketc.c\
-		  calcSteps.c
+		  reverse_rotate.c\
+		  rotate.c\
+		  rotate_stack.c\
+		  rotate_stack_1.c\
+		  swap.c\
+		  utils.c\
+		  utils1.c\
+		  ind_array.c
 
-SRCS_P	= mainPs.c
+SRCS_P	= ps_main.c
 
 SRCS_C	= checker.c
 

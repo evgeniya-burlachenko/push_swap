@@ -7,7 +7,9 @@ typedef struct s_arr
 	int 	value; 
 	int		i;
 	char	flag;
-	char	min;
+//	char	min;
+	int		rr;
+	int		rrr;
 
 }				t_arr;
 
@@ -16,7 +18,7 @@ typedef	struct s_info
 	int		a_len;
 	int		b_len;
 	int		count;
-	int		print;
+	int		print;//в инструкциях для печати
 	t_arr	*a_arr;
 }				t_info;
 
@@ -46,11 +48,33 @@ void		rra(t_arr *a_arr, t_info *data, int flag);
 void		rrb(t_arr	*b_arr, t_info *data, int flag);
 void		rrr(t_arr *a_arr, t_arr *b_arr, t_info *data);
 
+void		pa(t_arr *a_arr, t_arr *b_arr, t_info *data);
+void 		pb (t_arr *a_arr, t_arr *b_arr, t_info *data);
+
 void 		sortedThree(t_arr *a_arr, t_info *data);
+void 		sortedFour(t_arr *a_arr,t_arr *b_arr, t_info *data);
+void 		sortedFive(t_arr *a_arr,t_arr *b_arr, t_info *data);
 
 
+void		pushTob(t_arr *a_arr, t_arr *b_arr, t_info *data);
+void		countSteps(t_arr *arr, int len);
+void 		rotateStack(t_arr *a_arr, t_arr *b_arr, t_info *data, int *ret);
+void		push_swap(t_arr *a_arr, t_arr *b_arr, t_info *data);
 
 
+int			*findPlace(t_arr *a, int b, int len);
+int 		maxSteps(int x, int y);
+void		calcSteps(t_arr *b_arr, int *step, const int *rot, int i);
+void		numToPush(t_arr *a_arr, t_arr *b_arr, t_info *data, int *ret);
+
+void 		rotate_0(t_arr *a_arr, t_arr *b_arr, t_info *data, int *ret);
+void 		rotate_0_else(t_arr *arr, t_arr *b_arr, t_info *data, int *ret);
+void 		rotate_1(t_arr *a_arr, t_arr *b_arr, t_info *data, int *num_finish);
+void 		rotate_1_else(t_arr *a_arr, t_arr *b_arr, t_info *data, int *num_finish);
+
+void		rotate_2(t_arr *a_arr, t_arr *b_arr, t_info *data, int *num_finish);
+void		rotate_3(t_arr *a_arr, t_arr *b_arr, t_info *data, int *num_finish);
+void 		finishRotate(t_arr *a_arr, t_info *data, int i);
 
 
 

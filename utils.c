@@ -17,7 +17,7 @@ void checkArgcArgv(int argc, char **argv)
 
 	if(argc == 1)
 		exit (1);
-	i = 1;
+	i = 2;
 	while(i < argc)
 	{
 		if(!checkArgv(argv[i]))
@@ -61,9 +61,9 @@ int atoiPs(const char *str)
 		str++;
 	while(ft_isdigit(*str))
 	{
-		if (num > 2147483647 && (sign == 1))
+		if (num > LONG_MAX && (sign == 1))
 			return(-1);
-		if (num > 2147483648 && (sign == -1))
+		if (num > LONG_MAX && (sign == -1))
 			return(0);
 		num = num * 10 + *str - '0';
 		str++;
