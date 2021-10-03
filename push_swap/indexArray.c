@@ -17,7 +17,7 @@ int	index_min(t_arr	*a, t_info *data, int flag, int i)
 	compare = -2147483648;
 	index = -2;
 	if (!check_repeat)
-		check_repeat = -4000000;
+		check_repeat = 0;
 	while (++i < data->a_len)
 	{
 		if (a[i].i == -1 && (flag == 0 || a[i].value < compare))
@@ -27,8 +27,6 @@ int	index_min(t_arr	*a, t_info *data, int flag, int i)
 			index = i;
 		}
 	}
-	if (a[index].value == check_repeat)
-		error_exit();
 	check_repeat = a[index].value;
 	if (index == 0)
 		return (-1);
