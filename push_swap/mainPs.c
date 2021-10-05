@@ -1,8 +1,13 @@
 #include "push_swap.h"
 
-void	main_instruction(t_arr *a_arr, t_arr *b_arr, t_info *data)
+void	main_instruction(t_arr *a_arr, t_arr *b_arr, t_info *data, int len)
 {
-	if (data->a_len == 2)
+	if (bubble_sorting(a_arr, len))
+	{
+		free_all(a_arr, b_arr, data);
+		exit(0);
+	}
+	else if (data->a_len == 2)
 		sa(a_arr, data, 1);
 	else if (data->a_len == 5)
 		sorted_five(a_arr, b_arr, data);
@@ -36,11 +41,6 @@ int	main(int argc, char **argv)
 		i++;
 	}
 	index_array(a_arr, data, argc - 1);
-	if (bubble_sorting(a_arr, argc - 1))
-	{
-		free_all(a_arr, b_arr, data);
-		exit(0);
-	}
-	main_instruction(a_arr, b_arr, data);
+	main_instruction(a_arr, b_arr, data, argc - 1);
 	return (0);
 }
