@@ -17,6 +17,7 @@ void	main_instruction(t_arr *a_arr, t_arr *b_arr, t_info *data, int len)
 		sorted_three(a_arr, data);
 	else
 		push_swap(a_arr, b_arr, data);
+	free_all(a_arr, b_arr, data);
 }
 
 int	main(int argc, char **argv)
