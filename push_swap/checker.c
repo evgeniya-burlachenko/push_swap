@@ -6,7 +6,7 @@
 /*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 23:39:10 by evgeniyabur       #+#    #+#             */
-/*   Updated: 2021/10/05 15:11:43 by skelly           ###   ########.fr       */
+/*   Updated: 2021/10/05 18:06:37 by skelly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,25 +16,25 @@ int	instructions(char *instr, t_arr *a_arr, t_arr *b_arr, t_info *data)
 {
 	if (!ft_strncmp(instr, "sa", 2) && ft_strlen(instr) == 2)
 		sa(a_arr, data, 2);
-	if (!ft_strncmp(instr, "sb", 2) && ft_strlen(instr) == 2)
+	else if (!ft_strncmp(instr, "sb", 2) && ft_strlen(instr) == 2)
 		sb(a_arr, data, 2);
-	if (!ft_strncmp(instr, "ss", 2) && ft_strlen(instr) == 2)
+	else if (!ft_strncmp(instr, "ss", 2) && ft_strlen(instr) == 2)
 		ss(a_arr, b_arr, data);
-	if (!ft_strncmp(instr, "pa", 2) && ft_strlen(instr) == 2)
+	else if (!ft_strncmp(instr, "pa", 2) && ft_strlen(instr) == 2)
 		pa(a_arr, b_arr, data);
-	if (!ft_strncmp(instr, "pb", 2) && ft_strlen(instr) == 2)
+	else if (!ft_strncmp(instr, "pb", 2) && ft_strlen(instr) == 2)
 		pb(a_arr, b_arr, data);
-	if (!ft_strncmp(instr, "ra", 2) && ft_strlen(instr) == 2)
+	else if (!ft_strncmp(instr, "ra", 2) && ft_strlen(instr) == 2)
 		ra(a_arr, data, 2);
-	if (!ft_strncmp(instr, "rb", 2) && ft_strlen(instr) == 2)
+	else if (!ft_strncmp(instr, "rb", 2) && ft_strlen(instr) == 2)
 		rb(a_arr, data, 2);
-	if (!ft_strncmp(instr, "rr", 2) && ft_strlen(instr) == 2)
+	else if (!ft_strncmp(instr, "rr", 2) && ft_strlen(instr) == 2)
 		rr(a_arr, b_arr, data);
-	if (!ft_strncmp(instr, "rra", 2) && ft_strlen(instr) == 3)
+	else if (!ft_strncmp(instr, "rra", 2) && ft_strlen(instr) == 3)
 		rra(a_arr, data, 2);
-	if (!ft_strncmp(instr, "rrb", 2) && ft_strlen(instr) == 3)
+	else if (!ft_strncmp(instr, "rrb", 2) && ft_strlen(instr) == 3)
 		rrb(a_arr, data, 2);
-	if (!ft_strncmp(instr, "rrr", 2) && ft_strlen(instr) == 3)
+	else if (!ft_strncmp(instr, "rrr", 2) && ft_strlen(instr) == 3)
 		rrr(a_arr, b_arr, data);
 	else
 		return (0);
