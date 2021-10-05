@@ -6,7 +6,7 @@
 /*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 23:49:04 by skelly            #+#    #+#             */
-/*   Updated: 2021/10/05 17:45:58 by skelly           ###   ########.fr       */
+/*   Updated: 2021/10/05 23:34:40 by skelly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,6 @@ int	index_min(t_arr	*a, t_info *data, int flag, int i)
 
 	compare = -2147483648;
 	index = -2;
-	if (!check_repeat)
-		check_repeat = 0;
 	while (++i < data->a_len)
 	{
 		if (a[i].i == -1 && (flag == 0 || a[i].value < compare))
