@@ -6,7 +6,7 @@
 /*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 23:49:49 by skelly            #+#    #+#             */
-/*   Updated: 2021/10/03 23:49:50 by skelly           ###   ########.fr       */
+/*   Updated: 2021/10/05 17:34:21 by skelly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,10 +71,6 @@ int	atoi_ps(const char *str)
 		str++;
 	while (ft_isdigit(*str))
 	{
-		if (num > LONG_MAX && (sign == 1))
-			return (-1);
-		if (num > LONG_MAX && (sign == -1))
-			return (0);
 		num = num * 10 + *str - '0';
 		str++;
 	}

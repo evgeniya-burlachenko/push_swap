@@ -6,7 +6,7 @@
 /*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 23:49:04 by skelly            #+#    #+#             */
-/*   Updated: 2021/10/03 23:49:05 by skelly           ###   ########.fr       */
+/*   Updated: 2021/10/05 17:45:58 by skelly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void	ft_init(t_info *data, int len)
 {
 	data->a_len = len;
 	data->b_len = 0;
-	data->count = 0;
 	data->print = 2;
 }
 
@@ -39,6 +38,8 @@ int	index_min(t_arr	*a, t_info *data, int flag, int i)
 			index = i;
 		}
 	}
+	if (a[index].value == check_repeat)
+		error_exit();
 	check_repeat = a[index].value;
 	if (index == 0)
 		return (-1);

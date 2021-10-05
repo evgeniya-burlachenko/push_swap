@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/10/04 09:58:17 by skelly            #+#    #+#              #
-#    Updated: 2021/10/04 09:58:18 by skelly           ###   ########.fr        #
+#    Created: 2021/10/04 09:55:53 by skelly            #+#    #+#              #
+#    Updated: 2021/10/04 15:42:51 by skelly           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,18 +16,18 @@ NAME_C	= checker
 HEADER	= push_swap.h
 
 SRCS	= utils.c\
-		  rotate.c\
-		  swap.c\
-		  push.c\
-		  rotateReverse.c\
-		  sortedThree.c\
-		  sortedFourFive.c\
-		  utilsError.c\
-		  indexArray.c\
-		  push_swap.c\
-		  rotateStack.c\
-		  rotateStacketc.c\
-		  calcSteps.c
+			  rotate.c\
+		 	  swap.c\
+		 	  push.c\
+		  	  rotateReverse.c\
+		  	  sortedThree.c\
+		  	  sortedFourFive.c\
+		 	  utilsError.c\
+		  	  indexArray.c\
+			  push_swap.c\
+			  rotateStack.c\
+			  rotateStacketc.c\
+			  calcSteps.c
 
 SRCS_P	= mainPs.c
 

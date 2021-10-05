@@ -6,7 +6,7 @@
 /*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 23:49:24 by skelly            #+#    #+#             */
-/*   Updated: 2021/10/03 23:49:25 by skelly           ###   ########.fr       */
+/*   Updated: 2021/10/05 17:28:57 by skelly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ void	pa(t_arr *a_arr, t_arr *b_arr, t_info *data)
 		b_arr[i - 1] = b_arr[i];
 	data->a_len++;
 	data->b_len--;
-	data->count++;
 	if (data->print == 2)
 		ft_putstr_fd("pa\n", 1);
 }
@@ -43,7 +42,6 @@ void	pb(t_arr *a_arr, t_arr *b_arr, t_info *data)
 		a_arr[i - 1] = a_arr[i];
 	data->a_len--;
 	data->b_len++;
-	data->count++;
 	if (data->print == 2)
 		ft_putstr_fd("pb\n", 1);
 }

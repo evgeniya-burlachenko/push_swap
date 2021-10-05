@@ -6,20 +6,20 @@
 /*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 23:46:57 by skelly            #+#    #+#             */
-/*   Updated: 2021/10/03 23:46:58 by skelly           ###   ########.fr       */
+/*   Updated: 2021/10/05 13:11:00 by skelly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_clean(char **ptr, int inp)
+static int	ft_clean(char **ptr, int inp)
 {
 	free(*ptr);
 	*ptr = 0;
 	return (inp);
 }
 
-int	ft_reading_file(char **save, int fd)
+static int	ft_reading_file(char **save, int fd)
 {
 	char	*buf;
 	int		byte;
@@ -47,7 +47,7 @@ int	ft_reading_file(char **save, int fd)
 	return (ft_clean(&buf, byte));
 }
 
-int	ft_get_save(char **save, char **line)
+static int	ft_get_save(char **save, char **line)
 {
 	char	*tmp;
 	char	*check;
