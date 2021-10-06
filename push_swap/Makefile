@@ -6,7 +6,7 @@
 #    By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/04 09:55:53 by skelly            #+#    #+#              #
-#    Updated: 2021/10/04 15:42:51 by skelly           ###   ########.fr        #
+#    Updated: 2021/10/06 12:56:23 by skelly           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,7 @@ OBJS_C = $(SRCS_C:.c=.o)
 
 LIBFT = libft
 
-CC := gcc -Wall -Werror -Wextra
+CC := gcc -Wall -Werror -Wextra -fsanitize=address -g
 LIB_FLAGS = -L libft -lft
 RM = rm -f
 

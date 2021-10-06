@@ -6,7 +6,7 @@
 /*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 23:48:39 by skelly            #+#    #+#             */
-/*   Updated: 2021/10/03 23:48:40 by skelly           ###   ########.fr       */
+/*   Updated: 2021/10/05 20:25:12 by skelly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ void	num_to_push(t_arr *a_arr, t_arr *b_arr, t_info *data, int *res)
 				finish_steps(res, num_a, i, j);
 			}	
 		}	
-		 free(num_a);
+		free(num_a);
 	}
 }
 

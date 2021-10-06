@@ -6,7 +6,7 @@
 /*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 23:39:10 by evgeniyabur       #+#    #+#             */
-/*   Updated: 2021/10/05 18:06:37 by skelly           ###   ########.fr       */
+/*   Updated: 2021/10/06 13:04:22 by skelly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	check_instruction(t_arr *a_arr, t_arr *b_arr, t_info *data)
 			break ;
 		if (!instructions(line, a_arr, b_arr, data))
 		{
-			ft_putendl_fd("Error", 1);
+			ft_putstr_fd("Error", 1);
 			exit(1);
 		}
 	}
@@ -85,7 +85,7 @@ int	main(int argc, char **argv)
 	a_arr = new_array(argc);
 	b_arr = new_array(argc);
 	i = 0;
-	while (i < argc && argv[i + i])
+	while (i < argc - 1 )
 	{
 		a_arr[i].value = atoi_ps(argv[i + 1]);
 		a_arr[i].i = -1;
@@ -93,10 +93,13 @@ int	main(int argc, char **argv)
 		i++;
 	}
 	index_array(a_arr, data, argc - 1);
+	if (bubble_sorting(a_arr, argc - 1))
+		return (0);
 	check_instruction(a_arr, b_arr, data);
 	if (bubble_sorting(a_arr, argc - 1))
 		ft_putstr_fd("OK\n", 1);
 	else
 		ft_putstr_fd("KO\n", 1);
+	free_all(a_arr, b_arr, data);
 	return (0);
 }

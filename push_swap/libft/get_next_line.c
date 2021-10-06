@@ -1,25 +1,13 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/03 23:46:57 by skelly            #+#    #+#             */
-/*   Updated: 2021/10/05 13:11:00 by skelly           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "libft.h"
 
-static int	ft_clean(char **ptr, int inp)
+int	ft_clean(char **ptr, int inp)
 {
 	free(*ptr);
 	*ptr = 0;
 	return (inp);
 }
 
-static int	ft_reading_file(char **save, int fd)
+int	ft_reading_file(char **save, int fd)
 {
 	char	*buf;
 	int		byte;
@@ -47,7 +35,7 @@ static int	ft_reading_file(char **save, int fd)
 	return (ft_clean(&buf, byte));
 }
 
-static int	ft_get_save(char **save, char **line)
+int	ft_get_save(char **save, char **line)
 {
 	char	*tmp;
 	char	*check;
@@ -73,18 +61,18 @@ static int	ft_get_save(char **save, char **line)
 
 int	get_next_line(int fd, char **line)
 {
-	static char	*save[256];
+	static char	*save;
 	int			byte;
 
-	if (!line || BUFFER_SIZE <= 0 || fd < 0 || fd > 256)
+	if (!line || BUFFER_SIZE <= 0 || fd < 0)
 		return (-1);
-	byte = ft_reading_file(&save[fd], fd);
+	byte = ft_reading_file(&save, fd);
 	if (byte < 0)
 		return (-1);
-	if (byte == 0 && save[fd] == 0)
+	if (byte == 0 && save == 0)
 	{
 		*line = ft_strdup("");
 		return (0);
 	}
-	return (ft_get_save(&save[fd], line));
+	return (ft_get_save(&save, line));
 }

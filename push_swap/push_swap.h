@@ -6,7 +6,7 @@
 /*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 09:54:58 by skelly            #+#    #+#             */
-/*   Updated: 2021/10/05 17:30:08 by skelly           ###   ########.fr       */
+/*   Updated: 2021/10/06 12:12:37 by skelly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef struct s_info
 	int			a_len;
 	int			b_len;
 	int			print;
+	t_arr		*a_arr;
 }t_info;
 
 t_arr			*new_array(int len);

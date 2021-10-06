@@ -29,7 +29,7 @@ int	main(int argc, char **argv)
 	a_arr = new_array(argc);
 	b_arr = new_array(argc);
 	i = 0;
-	while (i < argc && argv[i + 1])
+	while (i < argc - 1  )
 	{
 		a_arr[i].value = atoi_ps(argv[i + 1]);
 		a_arr[i].i = -1;
@@ -38,7 +38,10 @@ int	main(int argc, char **argv)
 	}
 	index_array(a_arr, data, argc - 1);
 	if (bubble_sorting(a_arr, argc - 1))
-		return (0);
+	{
+		free_all(a_arr, b_arr, data);
+		exit(0);
+	}
 	main_instruction(a_arr, b_arr, data);
 	return (0);
 }
