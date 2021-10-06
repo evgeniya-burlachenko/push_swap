@@ -6,7 +6,7 @@
 #    By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/04 09:55:53 by skelly            #+#    #+#              #
-#    Updated: 2021/10/06 12:56:23 by skelly           ###   ########.fr        #
+#    Updated: 2021/10/06 14:57:36 by skelly           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,6 +62,8 @@ clean:
 fclean:				clean
 					$(RM) $(NAME_C) $(NAME_P)
 
-re: fclean all
+re:					fclean all
+norm:
+					@norminette . | grep Error
 
 .PHONY: all clean fclean re

@@ -6,7 +6,7 @@
 /*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 23:39:10 by evgeniyabur       #+#    #+#             */
-/*   Updated: 2021/10/06 13:04:22 by skelly           ###   ########.fr       */
+/*   Updated: 2021/10/06 14:56:45 by skelly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,15 @@ t_info	*new_data(int len)
 	return (data);
 }
 
+void	check(t_arr *a_arr, t_arr *b_arr, t_info *data, int len)
+{
+	check_instruction(a_arr, b_arr, data);
+	if (bubble_sorting(a_arr, len))
+		ft_putstr_fd("OK\n", 1);
+	else
+		ft_putstr_fd("KO\n", 1);
+}
+
 int	main(int argc, char **argv)
 {
 	int		i;
@@ -95,11 +104,7 @@ int	main(int argc, char **argv)
 	index_array(a_arr, data, argc - 1);
 	if (bubble_sorting(a_arr, argc - 1))
 		return (0);
-	check_instruction(a_arr, b_arr, data);
-	if (bubble_sorting(a_arr, argc - 1))
-		ft_putstr_fd("OK\n", 1);
-	else
-		ft_putstr_fd("KO\n", 1);
+	check(a_arr, b_arr, data, argc - 1);
 	free_all(a_arr, b_arr, data);
 	return (0);
 }

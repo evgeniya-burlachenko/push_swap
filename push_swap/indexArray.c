@@ -6,7 +6,7 @@
 /*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 23:49:04 by skelly            #+#    #+#             */
-/*   Updated: 2021/10/06 10:29:23 by skelly           ###   ########.fr       */
+/*   Updated: 2021/10/06 17:45:45 by skelly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	index_min(t_arr	*a, t_info *data, int flag, int i)
 	compare = -2147483648;
 	index = -2;
 	if (!check_repeat)
-		check_repeat = -28900004;
+		check_repeat = -2147483649;
 	while (++i < data->a_len)
 	{
 		if (a[i].i == -1 && (flag == 0 || a[i].value < compare))
@@ -38,13 +38,13 @@ int	index_min(t_arr	*a, t_info *data, int flag, int i)
 			index = i;
 		}
 	}
+	if (index == -2)
+		return (0);
 	if (a[index].value == check_repeat)
 		error_exit();
 	check_repeat = a[index].value;
 	if (index == 0)
 		return (-1);
-	else if (index == -2)
-		return (0);
 	return (index);
 }
 
