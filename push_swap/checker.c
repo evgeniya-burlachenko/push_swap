@@ -6,7 +6,7 @@
 /*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 23:39:10 by evgeniyabur       #+#    #+#             */
-/*   Updated: 2021/10/07 09:57:06 by skelly           ###   ########.fr       */
+/*   Updated: 2021/10/08 00:48:42 by skelly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	instructions(char *instr, t_arr *a_arr, t_arr *b_arr, t_info *data)
 	if (!ft_strncmp(instr, "sa", 2) && ft_strlen(instr) == 2)
 		sa(a_arr, data, 2);
 	else if (!ft_strncmp(instr, "sb", 2) && ft_strlen(instr) == 2)
-		sb(a_arr, data, 2);
+		sb(b_arr, data, 2);
 	else if (!ft_strncmp(instr, "ss", 2) && ft_strlen(instr) == 2)
 		ss(a_arr, b_arr, data);
 	else if (!ft_strncmp(instr, "pa", 2) && ft_strlen(instr) == 2)
@@ -27,14 +27,14 @@ int	instructions(char *instr, t_arr *a_arr, t_arr *b_arr, t_info *data)
 	else if (!ft_strncmp(instr, "ra", 2) && ft_strlen(instr) == 2)
 		ra(a_arr, data, 2);
 	else if (!ft_strncmp(instr, "rb", 2) && ft_strlen(instr) == 2)
-		rb(a_arr, data, 2);
+		rb(b_arr, data, 2);
 	else if (!ft_strncmp(instr, "rr", 2) && ft_strlen(instr) == 2)
 		rr(a_arr, b_arr, data);
-	else if (!ft_strncmp(instr, "rra", 2) && ft_strlen(instr) == 3)
+	else if (!ft_strncmp(instr, "rra", 3) && ft_strlen(instr) == 3)
 		rra(a_arr, data, 2);
-	else if (!ft_strncmp(instr, "rrb", 2) && ft_strlen(instr) == 3)
-		rrb(a_arr, data, 2);
-	else if (!ft_strncmp(instr, "rrr", 2) && ft_strlen(instr) == 3)
+	else if (!ft_strncmp(instr, "rrb", 3) && ft_strlen(instr) == 3)
+		rrb(b_arr, data, 2);
+	else if (!ft_strncmp(instr, "rrr", 3) && ft_strlen(instr) == 3)
 		rrr(a_arr, b_arr, data);
 	else
 		return (0);
@@ -51,7 +51,10 @@ void	check_instruction(t_arr *a_arr, t_arr *b_arr, t_info *data)
 	{
 		res = get_next_line(0, &line);
 		if (res == 0)
+		{
 			break ;
+			free_all(a_arr, b_arr, data);
+		}	
 		if (!instructions(line, a_arr, b_arr, data))
 		{
 			ft_putstr_fd("Error", 1);
@@ -80,6 +83,7 @@ void	check(t_arr *a_arr, t_arr *b_arr, t_info *data, int len)
 		ft_putstr_fd("OK\n", 1);
 	else
 		ft_putstr_fd("KO\n", 1);
+	free_all(a_arr, b_arr, data);
 }
 
 int	main(int argc, char **argv)
@@ -103,9 +107,6 @@ int	main(int argc, char **argv)
 	}
 	main_duplicate(a_arr, argc - 1);
 	index_array(a_arr, data, argc - 1);
-	if (bubble_sorting(a_arr, argc - 1))
-		return (0);
 	check(a_arr, b_arr, data, argc - 1);
-	free_all(a_arr, b_arr, data);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 23:49:14 by skelly            #+#    #+#             */
-/*   Updated: 2021/10/06 18:16:03 by skelly           ###   ########.fr       */
+/*   Updated: 2021/10/07 10:38:16 by skelly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,20 +68,20 @@ void	rotate_a_b(t_arr *a_arr, t_arr *b_arr, t_info *data, int *res)
 
 void	push_swap(t_arr *a_arr, t_arr *b_arr, t_info *data)
 {
-	int	*num_finish;
+	int	*res;
 	int	i;
 
-	num_finish = malloc(4 * sizeof(int));
+	res = malloc(4 * sizeof(int));
 	push_to_b(a_arr, b_arr, data);
 	while (data->b_len > 0)
 	{
 		count_steps(a_arr, data->a_len);
 		count_steps(b_arr, data->b_len);
-		num_to_push(a_arr, b_arr, data, num_finish);
-		rotate_a_b(a_arr, b_arr, data, num_finish);
+		num_to_push(a_arr, b_arr, data, res);
+		rotate_a_b(a_arr, b_arr, data, res);
 		pa(a_arr, b_arr, data);
 	}
-	free(num_finish);
+	free(res);
 	i = 0;
 	finish_rotate(a_arr, data, i);
 }
