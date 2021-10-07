@@ -6,7 +6,7 @@
 /*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 23:39:10 by evgeniyabur       #+#    #+#             */
-/*   Updated: 2021/10/06 14:56:45 by skelly           ###   ########.fr       */
+/*   Updated: 2021/10/07 09:57:06 by skelly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,7 @@ int	main(int argc, char **argv)
 		a_arr[i].flag = 'n';
 		i++;
 	}
+	main_duplicate(a_arr, argc - 1);
 	index_array(a_arr, data, argc - 1);
 	if (bubble_sorting(a_arr, argc - 1))
 		return (0);

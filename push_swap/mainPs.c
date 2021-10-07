@@ -15,32 +15,6 @@ void	main_instruction(t_arr *a_arr, t_arr *b_arr, t_info *data)
 	free_all(a_arr, b_arr, data);
 }
 
-int	duplicate(t_arr *a, int check, int len)
-{
-	int	i;
-
-	i = 0;
-	while (i < len)
-	{
-		if (a[i++].value == check)
-			return (1);
-	}
-	return (0);
-}
-
-void	main_duplicate(t_arr *a_arr, int len)
-{
-	int	i;
-
-	i = 0;
-	while (i < len)
-	{
-		if (duplicate(a_arr, a_arr[i].value, i))
-			error_exit();
-		i++;
-	}	
-}
-
 int	main(int argc, char **argv)
 {
 	int		i;

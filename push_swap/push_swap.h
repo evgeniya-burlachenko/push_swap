@@ -6,7 +6,7 @@
 /*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 09:54:58 by skelly            #+#    #+#             */
-/*   Updated: 2021/10/06 12:12:37 by skelly           ###   ########.fr       */
+/*   Updated: 2021/10/07 09:56:38 by skelly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ int				bubble_sorting(t_arr *arr, int len);
 int				error_exit(void);
 void			free_all(t_arr *a_arr, t_arr *b_arr, t_info *data);
 int				error_atoi(unsigned long num, int sign);
+void			main_duplicate(t_arr *a_arr, int len);
+int				duplicate(t_arr *a, int check, int len);
 
 void			ft_init(t_info *data, int len);
 int				index_min(t_arr	*a, t_info *data, int flag, int i);

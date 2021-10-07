@@ -6,7 +6,7 @@
 /*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 23:49:52 by skelly            #+#    #+#             */
-/*   Updated: 2021/10/03 23:49:53 by skelly           ###   ########.fr       */
+/*   Updated: 2021/10/07 09:55:57 by skelly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,30 @@ int	error_atoi(unsigned long num, int sign)
 		exit(1);
 	}
 	return (0);
+}
+
+int	duplicate(t_arr *a, int check, int len)
+{
+	int	i;
+
+	i = 0;
+	while (i < len)
+	{
+		if (a[i++].value == check)
+			return (1);
+	}
+	return (0);
+}
+
+void	main_duplicate(t_arr *a_arr, int len)
+{
+	int	i;
+
+	i = 0;
+	while (i < len)
+	{
+		if (duplicate(a_arr, a_arr[i].value, i))
+			error_exit();
+		i++;
+	}	
 }
