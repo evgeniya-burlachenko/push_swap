@@ -6,7 +6,7 @@
 /*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 23:39:10 by evgeniyabur       #+#    #+#             */
-/*   Updated: 2021/10/08 00:48:42 by skelly           ###   ########.fr       */
+/*   Updated: 2021/10/08 10:53:22 by skelly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,8 +71,6 @@ t_info	*new_data(int len)
 	if (!data)
 		return (0);
 	data->a_len = len;
-	data->b_len = 0;
-	data->print = 1;
 	return (data);
 }
 
@@ -107,6 +105,7 @@ int	main(int argc, char **argv)
 	}
 	main_duplicate(a_arr, argc - 1);
 	index_array(a_arr, data, argc - 1);
+	data->print = 0;
 	check(a_arr, b_arr, data, argc - 1);
 	return (0);
 }

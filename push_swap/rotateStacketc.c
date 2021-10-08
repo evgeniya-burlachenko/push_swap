@@ -6,7 +6,7 @@
 /*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 23:49:36 by skelly            #+#    #+#             */
-/*   Updated: 2021/10/07 15:52:59 by skelly           ###   ########.fr       */
+/*   Updated: 2021/10/08 00:54:21 by skelly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void	finish_rotate(t_arr *a_arr, t_info *data, int i)
 			rr[0]--;
 		}
 	}
-	if (rr[0] > rr[1])
+	else if (rr[0] > rr[1])
 	{
 		while (rr[1] > 0)
 		{
