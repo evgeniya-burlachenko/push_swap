@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: skelly <skelly@student.42.fr>              +#+  +:+       +#+        */
+/*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 23:49:27 by skelly            #+#    #+#             */
-/*   Updated: 2021/10/09 17:49:05 by skelly           ###   ########.fr       */
+/*   Updated: 2021/10/11 11:37:53 by skelly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ void	rb(t_arr *b_arr, t_info *data, int flag)
 		if (flag != 2 && data->print == 2)
 			ft_putstr_fd("rb\n", 1);
 	}
-
 }
 
 void	rr(t_arr *a_arr, t_arr *b_arr, t_info *data)
