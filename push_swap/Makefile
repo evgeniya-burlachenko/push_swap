@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+         #
+#    By: skelly <skelly@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/04 09:55:53 by skelly            #+#    #+#              #
-#    Updated: 2021/10/08 10:56:06 by skelly           ###   ########.fr        #
+#    Updated: 2021/10/09 15:41:48 by skelly           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,7 @@ OBJS_C = $(SRCS_C:.c=.o)
 
 LIBFT = libft
 
-CC := gcc -Wall -Werror -Wextra -fsanitize=address -g
+CC := gcc -Wall -Werror -Wextra 
 LIB_FLAGS = -L libft -lft
 RM = rm -f
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
+/*   By: skelly <skelly@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 23:49:49 by skelly            #+#    #+#             */
-/*   Updated: 2021/10/06 15:15:29 by skelly           ###   ########.fr       */
+/*   Updated: 2021/10/09 15:13:01 by skelly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ t_arr	*new_array(int len)
 	t_arr	*arr;
 
 	arr = malloc(len * sizeof(t_arr));
-	if (!arr)
-		return (0);
 	return (arr);
 }
 
@@ -74,6 +72,8 @@ int	atoi_ps(const char *str)
 		num = num * 10 + *str - '0';
 		str++;
 	}
+	if (*str != 0)
+		error_exit();
 	error_atoi(num, sign);
 	return (sign * (int)num);
 }

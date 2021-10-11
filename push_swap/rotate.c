@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
+/*   By: skelly <skelly@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 23:49:27 by skelly            #+#    #+#             */
-/*   Updated: 2021/10/05 17:30:00 by skelly           ###   ########.fr       */
+/*   Updated: 2021/10/09 17:49:05 by skelly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,17 @@ void	rb(t_arr *b_arr, t_info *data, int flag)
 	int		i;
 	t_arr	temp;
 
-	temp = b_arr[0];
-	i = 0;
-	while (i++ <= data->b_len - 1)
-		b_arr[i - 1] = b_arr[i];
-	b_arr[data->b_len - 1] = temp;
-	if (flag != 2 && data->print == 2)
-		ft_putstr_fd("rb\n", 1);
+	if (data->b_len != 0)
+	{
+		temp = b_arr[0];
+		i = 0;
+		while (i++ <= data->b_len - 1)
+			b_arr[i - 1] = b_arr[i];
+		b_arr[data->b_len - 1] = temp;
+		if (flag != 2 && data->print == 2)
+			ft_putstr_fd("rb\n", 1);
+	}
+
 }
 
 void	rr(t_arr *a_arr, t_arr *b_arr, t_info *data)

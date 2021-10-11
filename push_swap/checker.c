@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
+/*   By: skelly <skelly@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 23:39:10 by evgeniyabur       #+#    #+#             */
-/*   Updated: 2021/10/08 10:53:22 by skelly           ###   ########.fr       */
+/*   Updated: 2021/10/09 15:50:56 by skelly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	check_instruction(t_arr *a_arr, t_arr *b_arr, t_info *data)
 		}	
 		if (!instructions(line, a_arr, b_arr, data))
 		{
-			ft_putstr_fd("Error", 1);
+			ft_putstr_fd("Error\n", 1);
 			exit(1);
 		}
 	}
@@ -71,6 +71,7 @@ t_info	*new_data(int len)
 	if (!data)
 		return (0);
 	data->a_len = len;
+	data->b_len = 0;
 	return (data);
 }
 
