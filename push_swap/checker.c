@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: skelly <skelly@student.42.fr>              +#+  +:+       +#+        */
+/*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/03 23:39:10 by evgeniyabur       #+#    #+#             */
-/*   Updated: 2021/10/09 15:50:56 by skelly           ###   ########.fr       */
+/*   Created: 2021/10/13 09:43:40 by skelly            #+#    #+#             */
+/*   Updated: 2021/10/13 10:20:19 by skelly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ void	check_instruction(t_arr *a_arr, t_arr *b_arr, t_info *data)
 	while (1)
 	{
 		res = get_next_line(0, &line);
+		free(line);
 		if (res == 0)
 		{
 			break ;
