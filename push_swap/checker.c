@@ -6,10 +6,11 @@
 /*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 09:43:40 by skelly            #+#    #+#             */
-/*   Updated: 2021/10/13 10:20:19 by skelly           ###   ########.fr       */
+/*   Updated: 2021/10/13 14:08:22 by skelly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+		// line = 0;
 #include "push_swap.h"
 
 int	instructions(char *instr, t_arr *a_arr, t_arr *b_arr, t_info *data)
@@ -50,17 +51,18 @@ void	check_instruction(t_arr *a_arr, t_arr *b_arr, t_info *data)
 	while (1)
 	{
 		res = get_next_line(0, &line);
-		free(line);
 		if (res == 0)
 		{
+			free(line);
 			break ;
-			free_all(a_arr, b_arr, data);
 		}	
 		if (!instructions(line, a_arr, b_arr, data))
 		{
 			ft_putstr_fd("Error\n", 1);
+			free(line);
 			exit(1);
 		}
+		free(line);
 	}
 }
 
@@ -93,8 +95,8 @@ int	main(int argc, char **argv)
 	t_arr	*b_arr;
 	t_info	*data;
 
-	data = new_data(argc - 1);
 	check_argc_argv(argc, argv);
+	data = new_data(argc - 1);
 	a_arr = new_array(argc);
 	b_arr = new_array(argc);
 	i = 0;
