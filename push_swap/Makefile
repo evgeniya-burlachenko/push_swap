@@ -6,7 +6,7 @@
 #    By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/04 09:55:53 by skelly            #+#    #+#              #
-#    Updated: 2021/10/13 14:06:03 by skelly           ###   ########.fr        #
+#    Updated: 2021/10/13 16:36:19 by skelly           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,31 +33,24 @@ SRCS_P	= mainPs.c
 
 SRCS_C	= checker.c
 
-OBJS = $(SRCS:.c=.o)
-
-OBJS_P = $(SRCS_P:.c=.o)
-
-OBJS_C = $(SRCS_C:.c=.o)
-
 LIBFT = libft
 
-CC := gcc -Wall -Werror -Wextra -fsanitize=address -g
+CC := gcc -Wall -Werror -Wextra
 LIB_FLAGS = -L libft -lft
 RM = rm -f
 
 all: $(NAME_P)
 
-$(NAME_P):			$(OBJS) $(OBJS_P) $(HEADER) $(LIBFT)
+$(NAME_P):			$(SRCS) $(SRCS_P) $(HEADER) $(LIBFT)
 					@make -s -C $(LIBFT)
-					@$(CC) $(LIB_FLAGS) $(OBJS) $(OBJS_P) -o $(NAME_P)
+					@$(CC) $(LIB_FLAGS) $(SRCS) $(SRCS_P) -o $(NAME_P)
 
-bonus:				$(OBJS) $(OBJS_C) $(HEADER) $(LIBFT)
+bonus:				$(SRCS) $(SRCS_C) $(HEADER) $(LIBFT)
 					@make -s -C $(LIBFT)
-					@$(CC) $(LIB_FLAGS) $(OBJS) $(OBJS_C) -o $(NAME_C)
+					@$(CC) $(LIB_FLAGS) $(SRCS) $(SRCS_C) -o $(NAME_C)
 
 clean:
-					$(RM) $(OBJS) $(OBJS_C) $(OBJS_P)
-					@make clean -C $(LIBFT)
+					@make fclean -C $(LIBFT)
 
 fclean:				clean
 					$(RM) $(NAME_C) $(NAME_P)

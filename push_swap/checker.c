@@ -6,7 +6,7 @@
 /*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 09:43:40 by skelly            #+#    #+#             */
-/*   Updated: 2021/10/13 14:08:22 by skelly           ###   ########.fr       */
+/*   Updated: 2021/10/13 16:28:27 by skelly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ t_info	*new_data(int len)
 void	check(t_arr *a_arr, t_arr *b_arr, t_info *data, int len)
 {
 	check_instruction(a_arr, b_arr, data);
-	if (bubble_sorting(a_arr, len))
+	if (bubble_sorting(a_arr, len) && data->b_len == 0)
 		ft_putstr_fd("OK\n", 1);
 	else
 		ft_putstr_fd("KO\n", 1);
